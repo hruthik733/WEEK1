@@ -132,6 +132,12 @@ Exercise 4
 
  Exercise 3:
    
+   > class(state.center)
+ [1] "list"
+ > data.state <- as.data.frame(state.center)
+ 
+ Exercise 4:
+   
  > names <- c("std1", "std2", "std3", "std4")
  > ages <- c(10, 11, 12, 13)
  > scores <- c(60, 80, 90, 100)
@@ -145,7 +151,57 @@ Exercise 4
  3 std3  12    90
  4 std4  13   100
  
- Exercise 4:
+ Exercise 5:
+   
+> data.state <- as.data.frame(state.center)
+ > matrix.data <- matrix(1:40, nrow = 10, ncol = 4)
+> df <- as.data.frame(matrix.data)
+ > colnames(df) <- paste("variable_", 1:ncol(df))
+> rownames(df) <- paste("id_", 1:nrow(df))
+ > df
+ variable_ 1 variable_ 2 variable_ 3 variable_ 4
+ id_ 1            1          11          21          31
+ id_ 2            2          12          22          32
+ id_ 3            3          13          23          33
+ id_ 4            4          14          24          34
+ id_ 5            5          15          25          35
+ id_ 6            6          16          26          36
+ id_ 7            7          17          27          37
+ id_ 8            8          18          28          38
+ id_ 9            9          19          29          39
+ id_ 10          10          20          30          40
+
+ Exercise 6:
+   
+ > class(VADeaths)
+ [1] "matrix" "array" 
+ > df <- data.frame(VADeaths)
+ > df$Total <- rowSums(df)
+ > df <- df[,c(5,1,2,3,4)]
+ > df
+ Total Rural.Male Rural.Female Urban.Male Urban.Female
+ 50-54  44.2       11.7          8.7       15.4          8.4
+ 55-59  67.7       18.1         11.7       24.3         13.6
+ 60-64 103.5       26.9         20.3       37.0         19.3
+ 65-69 161.6       41.0         30.9       54.6         35.1
+ 70-74 241.4       66.0         54.3       71.1         50.0
+ 
+ Exercise 7:
+  
+ > class(state.x77)
+ [1] "matrix" "array" 
+ > df2 <- data.frame(state.x77)
+ 
+ > nrow(df2[df2$Income < 4300,])
+ [1] 20
+ 
+ > row.names(df2[which.max(df2$Income),])
+ [1] "Alaska"
+ 
+
+
+
+ 
 
 
    
